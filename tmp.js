@@ -1,6 +1,6 @@
     var tvalue;
     var displaydate = document.getElementById("date").value;
-
+test();
 function gettmpdata() {
       var path = gettmppath();
       path = '/processeddata/temperature/'+path;
@@ -18,6 +18,21 @@ function gettmpdata() {
       var count = document.querySelector("numberOfData");
     });
    
+  }
+  function test(){
+    var testpath = '/dataset/temperature';
+    db.ref(testpath).on('value',e => {
+      console.log(e.key);
+      testvalue = e.val();
+      console.log(testvalue);
+      for (abc in testvalue){
+        console.log(abc);
+        console.log(testvalue[abc]);
+      }
+      var showdataElement = document.querySelector("#showdata");
+      showdataElement.innerHTML =testvalue;
+      
+    });
   }
   function gettmppath(){
       var dataType = document.getElementById("type").value;
