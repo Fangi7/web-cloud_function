@@ -67,7 +67,11 @@ function gettmpdata() {
      display: false 
     }, 
     scales: { 
-    xAxes: [{ 
+    xAxes: [{
+    scaleLabel: {
+        display: true,
+        labelString: 'time(hr:min)'
+    },        
     ticks: {                 
         fontColor: '#336699'
      },
@@ -77,6 +81,10 @@ function gettmpdata() {
      } 
     }], 
     yAxes: [{ 
+    scaleLabel: {
+        display: true,
+        labelString: 'temperature(℃)'
+    },
     ticks: {           
         fontColor: '#336699'
     },
