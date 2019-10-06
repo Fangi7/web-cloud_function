@@ -34,8 +34,13 @@
     <div id ="tem-page" class='inactive'>
     <img id='home' src='images/small_box.png'/>
     <selectitem>
-        <span  style="color:white;">data type</span>
-        <select id="type" style="color:white;">
+        <img id="TEM" src='images/btn_temp_3.png' style="height:50px;"/>
+        <img id="CO2" src='images/btn_co2_2.png' style="height:50px;"/>
+        <img id="IMG" src='images/btn_img_2.png' style="height:50px;"/>
+    </selectitem>
+    <selectitem>
+        <span style="color:white;">data type</span>
+        <select id="type">
             <option>day</option>
             <option>month</option>
         </select>
@@ -49,7 +54,7 @@
       <button onclick="gettmpdata()"> OK </button>
     </selectitem>
     <div id="nodataAlert"></div>
-        <canvas id="chart" width="400px" height="200px" ></canvas>
+        <canvas id="chart" ></canvas>
         <div id="showdata"></div>
         <div id="avg" style="color:white;">Average temperature:</div>
         <div id="nemberOfData" style="color:white;">Number of data:</div>
@@ -58,6 +63,11 @@
     <!-- Co2 page -->
     <div id="co2-page" class='inactive'>
     <img id='home1' src='images/small_box.png'/>
+     <selectitem>
+        <img id="TEM" src='images/btn_temp_2.png' style="height:50px;"/>
+        <img id="CO2" src='images/btn_co2_3.png' style="height:50px;"/>
+        <img id="IMG" src='images/btn_img_2.png' style="height:50px;"/>
+    </selectitem>
         <selectitem>
         <span style="color:white;">location:</span>
         <select name="YourLocation" id="locateCO2">
@@ -75,6 +85,11 @@
      <!-- image page -->
     <div id="image-page" class='inactive'>
     <img id='home2' src='images/small_box.png'/>
+     <selectitem>
+        <img id="TEM" src='images/btn_temp_2.png' style="height:50px;"/>
+        <img id="CO2" src='images/btn_co2_2.png' style="height:50px;"/>
+        <img id="IMG" src='images/btn_img_3.png' style="height:50px;"/>
+    </selectitem>
     <selectitem>
     <span style="color:white;">location:</span>
         <select name="YourLocation" id="locateimg">
