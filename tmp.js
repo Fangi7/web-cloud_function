@@ -12,7 +12,7 @@ function gettmpdata() {
       tvalue = e.val();
       var showAlertElement = document.querySelector("#nodataAlert");
       if(!tvalue){   
-          showAlertElement.innerHTML ="There is no data data, please change date or locate";
+          showAlertElement.innerHTML ="There is no data, please change date or location";
           return;
       }
       showAlertElement.innerHTML ='';
@@ -56,7 +56,7 @@ function gettmpdata() {
               ,checkValueExist("11"),checkValueExist("12"),checkValueExist("13"),checkValueExist("14"),checkValueExist("15"),checkValueExist("16"),checkValueExist("17"),checkValueExist("18"),checkValueExist("19"),checkValueExist("20")
               ,checkValueExist("21"),checkValueExist("22"),checkValueExist("23")],
               fill: false,
-              borderColor:'red'
+              borderColor:'white'
           }]
 
       }

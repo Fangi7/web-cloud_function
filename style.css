@@ -19,8 +19,9 @@ h1{
     justify-content:center;
     margin-top:30px;
 }
-#home{
+#home,#home1,#home2{
     height:70px;
+    cursor:pointer; 
 }
 #main-page{
     display:flex;
