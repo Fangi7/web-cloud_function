@@ -56,9 +56,39 @@ function gettmpdata() {
               ,checkValueExist("11"),checkValueExist("12"),checkValueExist("13"),checkValueExist("14"),checkValueExist("15"),checkValueExist("16"),checkValueExist("17"),checkValueExist("18"),checkValueExist("19"),checkValueExist("20")
               ,checkValueExist("21"),checkValueExist("22"),checkValueExist("23")],
               fill: false,
-              borderColor:'white'
+              borderColor:'#DAF7DC',         
+                         
           }]
+          
+      },
+      
+      options: { 
+    legend:{ 
+     display: false 
+    }, 
+    scales: { 
+    xAxes: [{ 
+    ticks: {                 
+        fontColor: '#336699'
+     },
+     gridLines: { 
+      show: true, 
+      color: '#336699', 
+     } 
+    }], 
+    yAxes: [{ 
+    ticks: {           
+        fontColor: '#336699'
+    },
+    gridLines: { 
+      show: true, 
+      color:  '#336699', 
+     } 
+    }] 
+    }, 
 
-      }
-    });
+} 
+      
+    }
+    );
   }
