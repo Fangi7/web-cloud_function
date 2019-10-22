@@ -19,7 +19,7 @@ h1{
     justify-content:center;
     margin-top:30px;
 }
-#home,#home1,#home2{
+#home,#home1,#home2,#home_box{
     height:70px;
     cursor:pointer; 
 }
@@ -99,6 +99,17 @@ selectitem
     align-items:center;
     justify-content:center;
 }
+#box_table{
+}
+#table_div{
+    display:flex;  
+    align-items:center;
+    justify-content:center;   
+    font-size:15pt;
+    color:white;
+    margin-top:30px;
+}
+    
 .inactive {
   display: none !important;
 }

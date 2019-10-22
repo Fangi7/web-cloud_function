@@ -13,6 +13,7 @@
     <script src="tmp.js" defer></script>
     <script src="co2.js" defer></script>
     <script src="img.js" defer></script>
+    <script src="box.js" defer></script>
     <title>Sensing Box  </title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     
@@ -28,7 +29,15 @@
         <img id="IMG" src='images/btn_img.png' />
         </div>
         <img id='main_pic' src='images/main_pic.png'/>
-        <img id='boxbtn' src='images/btn_box.png' />
+        <img id='boxbtn' src='images/btn_box.png' style="cursor:pointer;"/>
+    </div>
+    <!-- box page -->
+    <div id ="box-page" class='inactive'>
+        <img id='home_box' src='images/small_box.png'/>
+        <div id='table_div'>
+            <table  id="box_table"  cellpadding="10">  
+            </table>
+        </div>
     </div>
      <!-- temperature page -->
     <div id ="tem-page" class='inactive'>
