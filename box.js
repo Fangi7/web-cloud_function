@@ -73,15 +73,7 @@
  
 function showbox1(){
 	 tab.classList.add('inactive'); 
-	 var imgUrl;
-	 var pathReference = storageRef.child('民雄/'+'aaaa.jpg'); //change to instant
-            pathReference.getDownloadURL().then(function(url) {
-            imgUrl = url;
-			console.log(imgUrl);
-			createbox1(imgUrl);
-    })
-}
-function createbox1(imgUrl){
+
 	 //1.创建表格节点对象
 	var tab1=document.getElementById("box1_table"); 
    // 2.创建标题 并添加到表格中
@@ -114,19 +106,23 @@ function createbox1(imgUrl){
       db.ref(boxpath).on('value',e => {
       console.log(e.val());
       var boxvalue = e.val();
-	    
+	  var imgUrl;
+	 var pathReference = storageRef.child('民雄/'+boxvalue['image']+'.jpg'); //change to instant
+            pathReference.getDownloadURL().then(function(url) {
+            imgUrl = url;
+			console.log(imgUrl);  
    // for(var i=1;i<2;i++){
 	   
         var tb_tr1=document.createElement('tr');
     
         var tr1_td2=document.createElement('td');
         tr1_td2.style.cssText="padding-right:50px;padding-left:50px;";
-        //tr1_td2.innerHTML = boxvalue["locate"];
-		tr1_td2.innerHTML = "27"
+        tr1_td2.innerHTML = boxvalue["temperature"];
+		//tr1_td2.innerHTML = "27"
         var tr1_td3=document.createElement('td');
         tr1_td3.style.cssText="padding-right:50px;padding-left:50px;";
-        //tr1_td3.innerHTML = boxvalue["time"];
-		tr1_td3.innerHTML = "500ppm";
+        tr1_td3.innerHTML = boxvalue["co2"];
+		//tr1_td3.innerHTML = "500ppm";
         var tr1_td4=document.createElement('td');
         tr1_td4.style.cssText="padding-right:50px;padding-left:50px;";
         tr1_td4.innerHTML ="<img src=\""+imgUrl+"\" style=\"height:300px;padding-left:15px;\"/>";
@@ -140,5 +136,6 @@ function createbox1(imgUrl){
         tab1.appendChild(tb_tr1);
    // }
 		console.log(tab1);
+		 })  
 		    });
 }
