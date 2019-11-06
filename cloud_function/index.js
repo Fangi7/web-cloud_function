@@ -47,7 +47,7 @@ exports.processTemDay = functions.database.ref('/dataset/temperature/{pushId}')
         var newdata = original["data"];
         var isExist = 0;
         //catch old data (wrong
-        admin.database().ref(datapath).once("value", targettime => {
+        admin.database().ref(datapath).on("value", targettime => {
             isExist = targettime.val();
             if (targettime.before.exists()){
             console.log("time exists!"+ isExist);
@@ -73,7 +73,7 @@ exports.processTemMonth = functions.database.ref('/dataset/temperature/{pushId}'
         var newdata = original["data"];
         var isExist = 0;
         //catch old data (wrong
-        admin.database().ref(datapath).once("value", targettime => {
+        admin.database().ref(datapath).on("value", targettime => {
             isExist = targettime.val();
             if (targettime.before.exists()){
             console.log("time exists!"+ isExist);
