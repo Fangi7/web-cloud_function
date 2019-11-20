@@ -90,7 +90,7 @@ function showbox1(){
     var th4=document.createElement('th');
     th4.innerHTML='圖片';
 	
-    // 将列添加到行内
+
    // tr.appendChild(th1);
     tr.appendChild(th2);
     tr.appendChild(th3);
