@@ -103,11 +103,11 @@ function showbox1(){
       console.log(boxpath);
       //read data from firebase
       
-      db.ref(boxpath).on('value',e => {
+      db.ref(boxpath).once('value',e => {
       console.log(e.val());
       var boxvalue = e.val();
 	  var imgUrl;
-	 var pathReference = storageRef.child('民雄/'+boxvalue['image']+'.jpg'); //change to instant
+	 var pathReference = storageRef.child('民雄/'+boxvalue['image']); //change to instant
             pathReference.getDownloadURL().then(function(url) {
             imgUrl = url;
 			console.log(imgUrl);  
