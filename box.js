@@ -32,7 +32,7 @@
       console.log(boxpath);
       //read data from firebase
       
-      db.ref(boxpath).on('value',e => {
+      db.ref(boxpath).once('value',e => {
       console.log(e.val());
       var boxvalue = e.val();
 	    
