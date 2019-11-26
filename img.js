@@ -5,6 +5,8 @@ var leftbtn = document.getElementById("leftbtn");
 var rightbtn = document.getElementById("rightbtn");
 leftbtn.addEventListener('click',changePrePic);
 rightbtn.addEventListener('click',changeNextPic);
+
+
 var imgvalue;
 var imgfilename = new Array();
 var imgnum=0;
@@ -12,7 +14,7 @@ function changePrePic(){
          console.log(imgfilename);
          imgnum = imgnum - 1;
          if(imgnum<0) imgnum = 0;
-  var pathReference = storageRef.child('民雄/'+imgfilename[imgnum]+'.jpg');
+  var pathReference = storageRef.child('民雄/'+imgfilename[imgnum]);
             pathReference.getDownloadURL().then(function(url) {
             downloadedImg.src = url;
         })
@@ -24,7 +26,7 @@ function changeNextPic(){
          console.log(imgfilename);
           imgnum = imgnum + 1;
           if(imgnum>=imgfilename.length) imgnum = imgfilename.length - 1;
-  var pathReference = storageRef.child('民雄/'+imgfilename[imgnum]+'.jpg');
+  var pathReference = storageRef.child('民雄/'+imgfilename[imgnum]);
             pathReference.getDownloadURL().then(function(url) {
             downloadedImg.src = url;
         })
@@ -36,8 +38,13 @@ function getimgdata(){
     var locateimg = '民雄';
     
     console.log("image download");
-        var path = '2019080502';
-      path = '/processeddata/image/'+locateimg+'/'+path;
+	var imgdisplaydate = document.getElementById("timeimg").value;
+	imgdisplaydate = imgdisplaydate.replace(/-/g,""); 
+	var timeHR = document.getElementById("timeimgHR").value;
+        var path = imgdisplaydate+timeHR;
+		console.log(path);
+      //path = '/processeddata/image/'+locateimg+'/'+path;
+      path = '/dataset/camera/'+path;
  
       //read data from firebase
 
@@ -54,7 +61,7 @@ function getimgdata(){
       });
 function showfirstimg(){
    console.log(imgfilename);
-    var pathReference = storageRef.child('民雄/'+imgfilename[0]+'.jpg');
+    var pathReference = storageRef.child('民雄/'+imgfilename[0]);
             pathReference.getDownloadURL().then(function(url) {
             downloadedImg.src = url;
         })
