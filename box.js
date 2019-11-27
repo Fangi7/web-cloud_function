@@ -106,8 +106,14 @@ function showbox1(){
       db.ref(boxpath).once('value',e => {
       console.log(e.val());
       var boxvalue = e.val();
-	  var imgUrl;
-	 var pathReference = storageRef.child('民雄/'+boxvalue['image']); //change to instant
+      var imgUrl;
+      try{
+        var pathReference = storageRef.child('民雄/'+boxvalue['image']); //change to instant
+      }
+      catch(e){
+        var pathReference = storageRef.child('message.svg'); //change to instant
+      }
+     
             pathReference.getDownloadURL().then(function(url) {
             imgUrl = url;
 			console.log(imgUrl);  
